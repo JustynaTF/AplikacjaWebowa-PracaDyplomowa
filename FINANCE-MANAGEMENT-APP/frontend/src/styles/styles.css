@@ -1,0 +1,639 @@
+body {
+  background: linear-gradient(to bottom right, #532377, #2b0070);
+  background-attachment: fixed;
+}
+.loginAndRegistrationForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px; /* Maksymalna szerokość formularza */
+  overflow: hidden;
+  padding: 50px; /* Dodaj wewnętrzny odstęp, jeśli to konieczne */
+  box-sizing: border-box; /* Zapewnij, że padding nie zwiększy szerokości */
+}
+
+.loginAndRegistrationForm::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.44) 60%
+  );
+  border-radius: 20px; /* Zaokrąglenie rogów o szerokość 10 pikseli */
+}
+
+.home {
+  color: rgb(2, 2, 97);
+  font-size: 29px;
+  font-style: unset;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.log-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px; /* Form border radius */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Form box shadow */
+  opacity: 1 !important;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  overflow: hidden; /* Dodaj overflow: hidden, aby ukryć tło przy rozmazywaniu */
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    #ffffff,
+    #ffffff
+  ); /* Gradient tła Navbar */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  ); /* Dodaj rozmazywanie, aby uzyskać efekt za mgłą */
+  z-index: -1; /* Ustawienie indeksu warstwy poniżej zawartości navbaru */
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  position: relative;
+  z-index: 2; /* Ustawienie indeksu warstwy dla każdego przycisku */
+}
+
+.navbar a.home,
+.navbar a.logout {
+  font-weight: bold; /* Uwydatnij tekst */
+  font-size: 1.2rem; /* Zwiększ rozmiar czcionki */
+}
+
+.navbar a:hover {
+  text-decoration: none;
+}
+
+/* Dodaj dodatkowe style dla przycisków */
+.navbar a.logout:hover,
+.navbar a.home:hover {
+  color: #ffd900; /* Zmień kolor na odcień żółtego */
+}
+.quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #ffffff; /* Change color as needed */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  padding-left: 15px; /* Left padding for quote text */
+  margin-bottom: 50px; /* Bottom margin for spacing */
+  font-family: "Arial", sans-serif; /* Change font family as needed */
+}
+
+.quote.active {
+  opacity: 1;
+}
+
+.intro {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-top: 50px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.9rem;
+  color: #fff;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.accent {
+  color: #ffa600; /* Accent color */
+  margin-top: 10px;
+}
+
+p {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.form1 label,
+.form1 p {
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  font-size: 31px;
+}
+
+.form1 input {
+  width: calc(100% - 50px);
+  font-size: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+.form1 button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+/* Dodaj animację do przycisku */
+.form1 button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.log-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px; /* Form border radius */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Form box shadow */
+}
+
+label {
+  font-size: 1.1rem;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Input border color */
+  border-radius: 5px; /* Input border radius */
+}
+.btn1 {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  height: 57px;
+  width: 270px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff; /* Button text color */
+  background: #ff9900d2; /* Gradient background */
+  box-shadow: 0 4px 6px rgba(223, 217, 217, 0.1);
+}
+
+.btn1:hover {
+  background: #f8e0e0; /* Gradient on hover */
+  transform: translateY(-2px); /* Move the button slightly up on hover */
+  color: #000000; /* Button text color */
+}
+
+.btn2 {
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ff9900; /* Button text color */
+  background: none;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: bold; /* Pogrubienie tekstu */
+}
+
+.btn2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 153, 0); /* Bottom border color */
+  transform: scaleX(
+    1
+  ); /* Zmiana na 1, aby podkreślenie było widoczne domyślnie */
+  transform-origin: 0 50%;
+  transition: transform 0.3s ease;
+}
+
+.btn2:hover::before {
+  transform: scaleX(
+    0
+  ); /* Zmiana na 0, aby podkreślenie znikało po najechaniu */
+}
+
+.btn2:hover {
+  color: #ff9900; /* Button text color on hover */
+}
+
+/*AddMonthlyBudgetForm*/
+.form2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 2px solid #ffffff; /* Form border color */
+  padding: 10px;
+  margin-top: 0.5%;
+  border-radius: 10px; /* Form border radius */
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Form box shadow */
+  border: 3px dashed#e29f3bd2; /* Obramowanie cienką, białą linią przerywaną */
+}
+
+.form2 h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.grid-sm {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-xs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Dodaj stylizację dla react-datepicker */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker {
+  font-size: 1rem;
+  color: #ffd900;
+}
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-left: 30px;
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.btn3 {
+  flex: 1; /* Dodaj tę właściwość, aby przyciski miały równe szerokości */
+  max-width: 120px; /* Ustaw maksymalną szerokość przycisku */
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff; /* Button text color */
+  background: #b94400d2; /* Gradient background */
+  box-shadow: 0 4px 6px rgba(223, 217, 217, 0.1); /* Subtle box shadow */
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block; /* Dodaj tę właściwość, aby przyciski były równej wielkości */
+  width: 100%; /* Dodaj tę właściwość, aby przyciski były równej wielkości */
+}
+
+.btn3:hover {
+  background: #f8e0e0; /* Gradient on hover */
+  transform: translateY(-2px); /* Move the button slightly up on hover */
+  color: #000000; /* Button text color */
+}
+
+.align-btn4 {
+  text-align: center;
+  margin-top: 50px; /* Dodaj odstęp od przycisków z miesiącami */
+}
+
+.data {
+  color: #fff;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.btn4 {
+  margin-top: 70px;
+  padding: 10px 20px;
+  align-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff; /* Button text color */
+  background: #bb1904d2; /* Gradient background */
+  box-shadow: 0 4px 6px rgba(223, 217, 217, 0.1); /* Subtle box shadow */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn4:hover {
+  background: #f8e0e0; /* Gradient on hover */
+  transform: translateY(-2px); /* Move the button slightly up on hover */
+  color: #000000; /* Button text color */
+}
+/* budgets */
+.budgets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.budget {
+  --backdrop: var(--accent);
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 32.2%;
+  flex: 1 1 32.2%;
+  max-width: 600px;
+  -webkit-box-shadow: 0.25em 0.3em 1em hsl(var(--muted) / 0.2);
+  box-shadow: 0.25em 0.3em 1em hsl(var(--muted) / 0.2);
+  background-color: var(--bkg);
+  border-radius: var(--round-lg);
+  border: 3px solid hsl(var(--backdrop));
+  padding: calc(var(--space-md) / 1.5) calc(var(--space-md) / 1.2);
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: hsl(var(--backdrop));
+  border: 3px solid#fcfcfcd2;
+  padding: 15px;
+}
+
+.budget > .flex-sm {
+  padding-top: var(--space-sm);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.progress-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  color: #ffd900;
+}
+
+.progress-text :nth-child(2) {
+  text-align: right;
+}
+
+.progress-text:nth-of-type(2) :nth-child(2) {
+  color: hsl(var(--muted));
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: 100%;
+  height: var(--space-sm);
+  border-radius: 100vmax;
+  overflow: hidden;
+  -webkit-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: hsl(var(--light));
+}
+
+progress[value]::-moz-progress-bar {
+  -moz-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: hsl(var(--backdrop));
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: hsl(var(--backdrop));
+  -webkit-transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.footer {
+  text-align: center;
+  height: 90px;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* expenseItem styling */
+td {
+  font-size: 2.3rem;
+  padding: 15px;
+  border-bottom: 1px solid #ffffff; /* Add a border between rows */
+}
+
+td:nth-child(1) {
+  font-weight: bold;
+  color: #ffffff; /* Header color for the first column */
+}
+
+td:nth-child(2) {
+  color: #ffd900; /* Color for the amount column */
+}
+
+td:nth-child(3) {
+  color: #ffffff; /* Color for the date column */
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* ExpensesPage styling */
+.grid-md {
+  margin-top: 20px;
+}
+
+h1,
+h2 {
+  color: #ffffff;
+}
+
+h2 small {
+  font-size: 3.2rem;
+}
+
+.grid-lg {
+  padding: 20px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 2.8rem;
+  position: relative; /* Add position relative to use as a reference for pseudo-elements */
+}
+
+th,
+td {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 2px solid #ffffff;
+}
+
+th {
+  background-color: #ff9900d2; /* Header background color */
+  color: #000000; /* Header text color */
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 768px) {
+  td,
+  th {
+    font-size: 1.4rem;
+  }
+}
+
+/* Responsive styling for extra small screens */
+@media (max-width: 480px) {
+  td,
+  th {
+    font-size: 1.2rem;
+  }
+}
+
+/* Fog effect */
+table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    /* Adjust the opacity as needed */ rgba(255, 255, 255, 0.4) 90%
+  );
+  z-index: -1;
+}
+
+/* Highlight button text and trash icon */
+button:hover {
+  color: #ffd900;
+}
+
+button:hover svg {
+  fill: #ffd900;
+}
+/* Styl dla kontenera, który zawiera oba formularze */
+.form4 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Styl dla każdego z formularzy */
+.form3 {
+  flex: 1; /* Rozciągnij formularze, aby zajmować dostępne miejsce */
+  max-width: 400px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl dla wszystkich inputów w formularzu */
+.form3 input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styl dla przycisków w formularzu */
+.form3 button {
+  width: calc(100% - 20px);
+  background-color: #ff9900d2;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
